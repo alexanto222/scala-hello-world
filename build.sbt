@@ -2,7 +2,7 @@ enablePlugins(JavaAppPackaging, DockerPlugin)
 
 organization := "Scala & Akka Examples for Knative Serving"
 
-name := "helloworld-scala"
+name := "demo-ecr"
 
 version := "0.0.1"
 
@@ -33,7 +33,7 @@ packageName in Docker := packageName.value
 version in Docker := version.value
 
 // Change this if you are changing which port to use in the app
-dockerExposedPorts := Seq(9001)
+dockerExposedPorts := Seq(9999)
 
 // You can specify some other jdk Docker image here:
 dockerBaseImage := "openjdk"
@@ -48,7 +48,7 @@ maintainer := ""
 // When using Minikube Docker Repository set it to "dev.local", if you set it to anything else
 // then run the following command after `docker:publishLocal`:
 //   `docker tag yourreponame/helloworld-scala:<version> dev.local/helloworld-scala:<version>`
-dockerRepository := Some("your_repository_name")
+dockerRepository := Some("421089506438.dkr.ecr.eu-west-1.amazonaws.com")
 
 // For more information about which Docker configuration options are available,
 // see: https://www.scala-sbt.org/sbt-native-packager/formats/docker.html
